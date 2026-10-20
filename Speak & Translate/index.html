@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate AI Translator</title>
+
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3269/3269817.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3269/3269817.png" alt="Translate Logo" style="height: 45px; width: 45px; margin-right: 12px;">
+            <span>Speak & Translate</span>
+        </div>
+        
+        <button id="theme-toggle" class="theme-btn" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <div class="container">
+        
+        <div class="card input-wrapper">
+            <div class="tools-bar">
+                <span class="label">Input Text</span>
+                <div class="tools">
+                    <button id="mic-btn" title="Speak Input"><i class="fas fa-microphone"></i></button>
+                    <button id="copy-btn" title="Copy Text"><i class="far fa-copy"></i></button>
+                    <button id="download-txt-btn" title="Save as Text File"><i class="fas fa-file-download"></i></button>
+                </div>
+            </div>
+            <textarea id="text-input" placeholder="Type here or use the microphone..."></textarea>
+        </div>
+
+        <div class="card controls">
+            <div class="trans-bar">
+                <select id="trans-mode">
+                    <option value="en|hi">English ➡ Hindi</option>
+                    <option value="hi|en">Hindi ➡ English</option>
+                    <option value="en|mr">English ➡ Marathi</option>
+                    <option value="mr|en">Marathi ➡ English</option>
+                    <option value="hi|mr">Hindi ➡ Marathi</option>
+                    <option value="mr|hi">Marathi ➡ Hindi</option>
+                </select>
+                <button id="translate-btn" class="action-btn">
+                    <i class="fas fa-sync-alt"></i> Translate
+                </button>
+            </div>
+        </div>
+
+        <div class="card settings">
+            <div class="setting-row">
+                <label><i class="fas fa-robot"></i> Voice</label>
+                <select id="voice-select"></select>
+            </div>
+            
+            <div class="sliders-grid">
+                <div class="slider-group">
+                    <div class="slider-head">
+                        <label>Speed</label>
+                        <span id="rate-value">1x</span>
+                    </div>
+                    <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-head">
+                        <label>Pitch</label>
+                        <span id="pitch-value">1x</span>
+                    </div>
+                    <input type="range" id="pitch" min="0" max="2" value="1" step="0.1">
+                </div>
+            </div>
+
+            <button id="speak-btn" class="speak-btn">
+                <i class="fas fa-volume-up"></i> Speak Output
+            </button>
+        </div>
+
+        <div class="card history-section">
+            <div class="history-head">
+                <span><i class="fas fa-history"></i> Recent History</span>
+                <button id="clear-history">Clear</button>
+            </div>
+            <ul id="history-list">
+                <li class="empty-msg">No history yet...</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
